@@ -1,40 +1,66 @@
-name: название шаблона
-description: описание шаблона
+name: Bug report
+description: Отчёт о дефекте
 title: "[Ошибка]: "
 labels: ["bug"]
-
 body:
   - type: textarea
-    id: идентификатор поля ввода
+    id: Description
     attributes:
-      label: подпись поля
-      description: описание
-      placeholder: подсказка
+      label: Описание
     validations:
-      required: true # поле обязательно для заполнения
-
-  - type: dropdown
-    id: идентификатор поля ввода
+      required: true
+      
+  - type: textarea
+    id: Playback_steps
     attributes:
-      label: подпись поля
-      description: описание
-      options:
-        - список
-        - опций
+      label: Шаги воспроизведения
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
+    id: Expected_result
     attributes:
-      value: |
-        Отобразить текст с разметкой markdown
-
-  - type: checkboxes
-    id: идентификатор поля ввода
-    attributes:
-      label: подпись
-      description: описание
-      options:
-        - label: флажок 1
+      label: Ожидаемый результат
     validations:
-      required: true # флажок обязателен или нет
+      required: true
+
+  - type: textarea
+    id: Actual_result
+    attributes:
+      label: Фактический результат
+    validations:
+      required: true
+
+  - type: textarea
+    id: Additional_materials
+    attributes:
+      label: Скриншоты / Доп. материалы
+      
+  - type: textarea
+    id: Execution_environment
+    attributes:
+      label: Среда выполнения
+      placeholder: Операционная система, IDE и прочие программные особенности необходимые для нахождения дефекта
+
+  - type: dropdown
+    id: Priority
+    attributes:
+      label: Приоритет
+      options:
+       - Высокий
+       - Средний
+       - Низкий
+    validations:
+      required: true
+
+  - type: dropdown
+    id: Severity
+    attributes:
+      label: Серьёзность
+      options:
+       - Критическая
+       - Высокая
+       - Средняя
+       - Низкая
+    validations:
+      required: true
